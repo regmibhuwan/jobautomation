@@ -6,11 +6,7 @@ from datetime import datetime
 from typing import cast
 
 # API base URL (configurable for deployment)
-api_host = os.getenv("API_BASE_HOST")
-if api_host:
-    API_BASE = f"https://{api_host}"
-else:
-    API_BASE = os.getenv("API_BASE_URL", "http://localhost:8000")
+API_BASE = os.getenv("API_BASE_URL", "http://localhost:8000")
 
 st.set_page_config(
     page_title="Tech Job Automation Dashboard",
