@@ -6,6 +6,7 @@ from typing import List, Optional
 from pydantic import BaseModel
 from resume_parser import ResumeParser
 from automation.job_automation import JobAutomation
+from db.init_db import create_tables
 
 app = FastAPI(title="Job Automation API", version="1.0.0")
 
@@ -21,6 +22,11 @@ app.add_middleware(
 DB_PATH = os.getenv("DB_PATH", "jobs.db")
 resume_parser = ResumeParser()
 job_automation = JobAutomation(db_path=DB_PATH)
+
+
+@app.on_event("startup")
+async def ensure_database():
+    create_tables(DB_PATH)
 
 # Pydantic models
 class Job(BaseModel):
