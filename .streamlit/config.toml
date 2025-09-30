@@ -1,0 +1,9 @@
+[browser]
+serverAddress = "localhost"
+
+[server]
+headless = true
+
+[theme]
+base = "light"
+

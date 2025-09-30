@@ -1,0 +1,20 @@
+# Environments
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# SQLite database backups
+*.db-journal
+
+# Playwright downloaded browsers
+playwright/.local-browsers/
+
+# Streamlit
+.streamlit/
+
+# Uploaded files
+uploads/
+
