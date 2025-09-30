@@ -1,7 +1,10 @@
 import sqlite3
+from typing import Optional
 
-def create_tables():
-    conn = sqlite3.connect("jobs.db")
+
+def create_tables(db_path: Optional[str] = None):
+    path = db_path or "jobs.db"
+    conn = sqlite3.connect(path)
     c = conn.cursor()
 
     c.execute("""
