@@ -22,8 +22,5 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.9
       - key: API_BASE_URL
-        fromService:
-          name: jobautomation-api
-          type: web
-          property: connectionString
+        value: https://jobautomation-api.onrender.com
 
