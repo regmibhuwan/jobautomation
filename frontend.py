@@ -6,9 +6,9 @@ from datetime import datetime
 from typing import cast
 
 # API base URL (configurable for deployment)
-api_host = st.secrets.get("api_host") or os.getenv("API_BASE_HOST")
+api_host = os.getenv("API_BASE_HOST")
 if api_host:
-    API_BASE = f"http://{api_host}"
+    API_BASE = f"https://{api_host}"
 else:
     API_BASE = os.getenv("API_BASE_URL", "http://localhost:8000")
 
