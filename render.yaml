@@ -9,13 +9,9 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.9
       - key: DB_PATH
-        value: /var/data/jobs.db
+        value: jobs.db
       - key: PLAYWRIGHT_HEADLESS
         value: "true"
-    disk:
-      name: jobs-db
-      mountPath: /var/data
-      sizeGB: 1
   - type: web
     name: jobautomation-frontend
     runtime: python
@@ -25,9 +21,9 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
-      - key: API_BASE_URL
+      - key: API_BASE_HOST
         fromService:
           name: jobautomation-api
           type: web
-          property: url
+          property: host
 
